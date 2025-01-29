@@ -30,22 +30,30 @@ class Encoder:
         secrets = json.loads(secrets)
 
         # Load the example secrets for use in Encoder.encode
-        # This will be "EXAMPLE" in the reference design"
-        self.some_secrets = secrets["some_secrets"]
-
-        # Generate a key for AES encryption
-        self.key = os.urandom(32)  # 256-bit key for AES-256
+        # This will be a 16-byte (128-bit) hex-encoded key
+        self.key = bytes.fromhex(secrets["some_secrets"])  # Convert hex to bytes
+        
+        
+        
 
     def encrypt(self, data: bytes) -> bytes:
         """
-        Encrypts the input data using AES-256 in CFB mode.
+        Encrypts the input data using AES-128 in CFB mode.
         Prepends the IV (Initialization Vector) to the encrypted data.
         """
-        iv = os.urandom(16)  # 16-byte IV for AES
+         # 16-byte IV for AES
+        iv = os.urandom(16) 
         cipher = Cipher(algorithms.AES(self.key), modes.CFB(iv), backend=default_backend())
         encryptor = cipher.encryptor()
+        # IV + encrypted data
         encrypted_data = encryptor.update(data) + encryptor.finalize()
-        return iv + encrypted_data  # IV + encrypted data
+        return iv + encrypted_data  
+    
+     # 16-byte IV for AES
+    
+    
+   
+    
 
     def encode(self, channel: int, frame: bytes, timestamp: int) -> bytes:
         """
