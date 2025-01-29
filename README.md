@@ -1,6 +1,6 @@
 
 ## Encryption Algorithm
-The encoder uses AES-256 (Advanced Encryption Standard) in CFB (Cipher Feedback) mode for encryption. AES-256 is a widely recognized and secure symmetric encryption algorithm. The key size is 256 bits (32 bytes), and the initialization vector (IV) is 16 bytes.
+The encoder uses AES-256 (Advanced Encryption Standard) in CFB (Cipher Feedback) mode for encryption. The key size is 256 bits (32 bytes), and the initialization vector (IV) is 16 bytes.
 
 ## Key Features of AES-256 CFB:
 Symmetric Encryption: The same key is used for both 2 time encryption .
