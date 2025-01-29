@@ -1,8 +1,8 @@
 
 ## Encryption Algorithm
-The encoder uses AES-256 (Advanced Encryption Standard) in CFB (Cipher Feedback) mode for encryption. The key size is 256 bits (32 bytes), and the initialization vector (IV) is 16 bytes.
+The encoder uses AES-128 (Advanced Encryption Standard) in CFB (Cipher Feedback) mode for encryption. The key size is 128 bits (16 bytes), and the initialization vector (IV) is 16 bytes.
 
-## Key Features of AES-256 CFB:
+
 Symmetric Encryption: The same key is used for both 2 time encryption .
 
 ## CFB Mode: This mode turns the block cipher into a stream cipher, allowing encryption of data in smaller chunks without padding.
@@ -20,7 +20,7 @@ The Channel ID is packed into 4 bytes, and the Timestamp is packed into 8 bytes.
 
 ## Encryption:
 
-The frame is encrypted using AES-256 in CFB mode.
+The frame is encrypted using AES-128 in CFB mode.
 
 A 16-byte IV is generated for each encryption operation.
 
@@ -62,4 +62,4 @@ python3 encoder.py secrets_vivek.json 2 "vivek raj" 3
 
 
 ## output :
-b'\x02\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00O\x07p\xee\x1d\x01\x11GO.9j\xad\x80\x1c:T\xd8\x97\xefF\xedI\xdeB'
+b'\x02\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00J\x9b\xa6>\xef\x08B\xdbI#\x10Y\xfc8Wk\xbf\xfa<\xb6\xa5l\xa5\r3'
